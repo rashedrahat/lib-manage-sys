@@ -10,5 +10,13 @@ exports.validate = (method) => {
             ];
         }
             break;
+
+        case 'login': {
+            return [
+                body('email', "Invalid email").isEmail(),
+                body('password', "Invalid password").isLength({min: 4}),
+            ];
+        }
+            break;
     }
 }
