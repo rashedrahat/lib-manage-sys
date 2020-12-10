@@ -4,11 +4,16 @@ const insert = (data) => {
     return bookModel.create(data)
 }
 
-/*const findByEmail = email => {
-    return bookModel.find({email})
-}*/
+const findById = id => {
+    return bookModel.find({_id : id})
+}
+
+const findByIdAndUpdate = (id, data) => {
+    return bookModel.findByIdAndUpdate(id, data)
+}
 
 module.exports = {
     insert,
-    // findByEmail
+    findById,
+    findByIdAndUpdate
 }
